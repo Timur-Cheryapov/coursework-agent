@@ -4,6 +4,16 @@ Provides utilities for formatting mathematical solutions in LaTeX,
 generating complete document templates, and rendering to readable output.
 """
 
+# --- Bootstrap: fix Windows encoding (must be before other code) ---
+import io, sys
+if sys.platform == "win32":
+    try:
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+        sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+# --- End bootstrap ---
+
 import re
 from typing import Optional
 

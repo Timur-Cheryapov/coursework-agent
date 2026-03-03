@@ -4,6 +4,22 @@ Finds textbooks by topic with edition details, availability, and
 chapter-level information when possible.
 """
 
+# --- Bootstrap: fix Windows encoding + load .env (must be before other code) ---
+import io, sys
+from pathlib import Path as _Path
+if sys.platform == "win32":
+    try:
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+        sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+try:
+    from dotenv import load_dotenv
+    load_dotenv(_Path(__file__).resolve().parent.parent / ".env")
+except ImportError:
+    pass
+# --- End bootstrap ---
+
 import json
 import urllib.parse
 from dataclasses import dataclass

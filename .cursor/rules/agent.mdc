@@ -31,7 +31,7 @@ You are a **specialist research agent** for university-level coursework in **mec
 
 ## Tool Execution — IMPORTANT
 
-You have Python tools in the `tools/` directory. **You CAN and SHOULD run them** via terminal commands. These are real, runnable Python scripts.
+You have Python tools in the `tools/` directory. **You CAN and SHOULD run them** via terminal commands. These are real, runnable Python scripts. All tools auto-load credentials from `.env` — you do **NOT** need `export`, `set`, or env var prefixes.
 
 ### How to Run Tools
 
@@ -45,7 +45,7 @@ python tools/web_search.py "your search query here"
 python tools/book_finder.py "topic keywords here"
 ```
 
-**Query Wolfram Alpha** (symbolic math, verification — requires `WOLFRAM_APP_ID` env var):
+**Query Wolfram Alpha** (symbolic math, verification):
 ```bash
 python tools/wolfram_query.py "math expression or question"
 ```

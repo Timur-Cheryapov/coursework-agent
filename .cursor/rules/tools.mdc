@@ -6,6 +6,19 @@ alwaysApply: true
 
 You have **real, runnable Python tools** in the `tools/` directory. You MUST use them — do NOT say you "can't run tools" or "don't have access to tools". Execute them via terminal commands.
 
+## ⚠️ IMPORTANT: No env var prefixes needed
+
+All tools auto-load the `.env` file from the project root. You do **NOT** need to `export WOLFRAM_APP_ID=...` or set `PYTHONIOENCODING=...` before running commands. Just run the tool directly:
+
+```bash
+python tools/wolfram_query.py "solve x^2 - 4 = 0"
+```
+
+**NOT** this (don't do this):
+```bash
+export WOLFRAM_APP_ID=... && PYTHONIOENCODING=utf-8 python tools/wolfram_query.py "..."
+```
+
 ## Quick Reference
 
 | Task | Command |
@@ -61,7 +74,7 @@ print(format_book_results(results))
 
 ### 3. Wolfram Alpha (`tools/wolfram_query.py`)
 
-Symbolic math solving and answer verification. Requires `WOLFRAM_APP_ID` environment variable.
+Symbolic math solving and answer verification. Reads `WOLFRAM_APP_ID` from `.env` automatically.
 
 **CLI usage:**
 ```bash
@@ -83,7 +96,7 @@ print(format_wolfram_result(result))
 
 **When to use:** To verify your computed answers, solve equations symbolically, or get step-by-step solutions.
 
-**If WOLFRAM_APP_ID is not set:** The tool will return a clear error message. Tell the user to set the env var.
+**If WOLFRAM_APP_ID is not set:** The tool will return a clear error message. Tell the user to add it to `.env`.
 
 ### 4. LaTeX Renderer (`tools/latex_renderer.py`)
 
@@ -119,7 +132,8 @@ print("Saved to .tmp/solution.tex")
 ## General Rules
 
 1. **Always run tools from the project root directory** (`cd` to it first if needed)
-2. **Save generated output to `.tmp/`** — LaTeX files, search results, scripts, etc.
-3. **Chain tools together** — e.g., solve a problem, then verify with Wolfram, then search for examples
-4. **If a tool fails**, read the error output and try adjusting the query or parameters
-5. **The `match_known_textbooks()` function works offline** — use it even when APIs are unavailable
+2. **Never prefix commands with `export` or env var assignments** — `.env` is loaded automatically
+3. **Save generated output to `.tmp/`** — LaTeX files, search results, scripts, etc.
+4. **Chain tools together** — e.g., solve a problem, then verify with Wolfram, then search for examples
+5. **If a tool fails**, read the error output and try adjusting the query or parameters
+6. **The `match_known_textbooks()` function works offline** — use it even when APIs are unavailable

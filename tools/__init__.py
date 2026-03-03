@@ -8,6 +8,22 @@ Available tools:
 - latex_renderer: Format and render LaTeX output
 """
 
+# Auto-load .env so all tools pick up WOLFRAM_APP_ID, PYTHONIOENCODING, etc.
+from pathlib import Path as _Path
+
+def _load_env():
+    """Load .env from the project root if python-dotenv is available."""
+    try:
+        from dotenv import load_dotenv
+        # Walk up from this file to find .env at the project root
+        env_path = _Path(__file__).resolve().parent.parent / ".env"
+        if env_path.exists():
+            load_dotenv(env_path)
+    except ImportError:
+        pass  # python-dotenv not installed; env vars must be set manually
+
+_load_env()
+
 from tools.web_search import search_all, search_semantic_scholar, search_arxiv, search_openlibrary, format_results
 from tools.wolfram_query import query_wolfram_full, query_wolfram_short, solve_equation, compute_integral, compute_derivative, compute_eigenvalues, solve_ode, format_wolfram_result
 from tools.book_finder import find_books, match_known_textbooks, search_openlibrary_books, search_google_books, format_book_results
