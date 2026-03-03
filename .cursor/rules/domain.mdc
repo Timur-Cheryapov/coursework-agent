@@ -1,0 +1,68 @@
+---
+alwaysApply: true
+---
+
+# 📚 Domain Expertise — Mechanics, Physics & Mathematics
+
+## Domains
+
+### MECHANICS
+- Newtonian mechanics, statics, dynamics, rigid body motion
+- Lagrangian / Hamiltonian mechanics
+- Vibrations, oscillations, resonance
+- Fluid mechanics (incompressible flow, Bernoulli, Navier-Stokes basics)
+- Structural mechanics: beams, trusses, stress/strain
+
+### PHYSICS
+- Classical mechanics (energy, momentum, rotational dynamics)
+- Thermodynamics (laws, cycles, entropy, heat transfer)
+- Electromagnetism (Maxwell's equations, circuits, fields)
+- Wave mechanics (superposition, interference, standing waves)
+- Quantum basics (Schrödinger equation, particle-in-a-box, hydrogen atom)
+- Special relativity (Lorentz transformations, energy-momentum)
+
+### MATHEMATICS
+- Calculus: single-variable, multivariable, vector calculus
+- Ordinary Differential Equations (ODEs): first/second order, systems
+- Partial Differential Equations (PDEs): heat, wave, Laplace equations
+- Linear Algebra: eigenvalues, diagonalization, SVD
+- Fourier Series & Transforms
+- Numerical Methods: Euler, Runge-Kutta, Newton-Raphson, finite differences
+
+## Standard Textbooks by Domain
+
+### Mechanics
+| Book | Author(s) | Use For |
+|------|-----------|---------|
+| Engineering Mechanics: Statics & Dynamics | R.C. Hibbeler | Statics, dynamics, FBDs |
+| Engineering Mechanics | Meriam & Kraige | Statics, dynamics |
+| Vector Mechanics for Engineers | Beer & Johnston | Comprehensive mechanics |
+| Classical Mechanics | Taylor | Lagrangian/Hamiltonian |
+| Mechanics of Materials | Hibbeler | Stress, strain, beams |
+
+### Physics
+| Book | Author(s) | Use For |
+|------|-----------|---------|
+| Physics for Scientists & Engineers | Serway & Jewett | General physics |
+| Fundamentals of Physics | Halliday, Resnick & Walker | General physics |
+| An Introduction to Mechanics | Kleppner & Kolenkow | Advanced classical mechanics |
+| Introduction to Electrodynamics | Griffiths | Electromagnetism |
+| Thermodynamics: An Engineering Approach | Çengel & Boles | Thermodynamics |
+
+### Mathematics
+| Book | Author(s) | Use For |
+|------|-----------|---------|
+| Advanced Engineering Mathematics | Kreyszig | ODEs, PDEs, linear algebra, Fourier |
+| Engineering Mathematics | K.A. Stroud | Practical worked examples |
+| Calculus: Early Transcendentals | Stewart | Calculus |
+| Linear Algebra and Its Applications | Strang | Linear algebra |
+| Elementary Differential Equations | Boyce & DiPrima | ODEs |
+
+## Problem Classification Guide
+
+When classifying a problem, identify:
+1. **Domain**: Mechanics / Physics / Mathematics
+2. **Sub-topic**: e.g., static equilibrium, second-order ODE
+3. **Problem type**: calculation, derivation, proof, conceptual explanation
+4. **Key formulas**: which equations are likely needed
+5. **Textbook match**: which textbook chapter covers this exact type
