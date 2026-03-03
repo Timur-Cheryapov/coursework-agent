@@ -36,9 +36,14 @@ Use the `/solve-problem` skill protocol:
 
 ### STEP 3 — Search for Matching Textbook Examples
 
-Use `tools/web_search.py` → `search_all()` + the `/find-examples` skill:
+**Run in terminal:**
+```bash
+python tools/web_search.py "[topic] worked example"
+```
+
+Or use the `/find-examples` skill for the full protocol:
 1. Translate the problem into textbook search terms
-2. Run `search_all()` with example-optimized queries:
+2. Search with multiple query variations:
    - `"[topic] worked example"`
    - `"[topic] solved problem"`
    - `"[textbook name] [topic]"`
@@ -47,7 +52,11 @@ Use `tools/web_search.py` → `search_all()` + the `/find-examples` skill:
 
 ### STEP 4 — Find Relevant Textbooks
 
-Use `tools/book_finder.py` → `find_books()`:
+**Run in terminal:**
+```bash
+python tools/book_finder.py "[topic] [subtopic]"
+```
+
 1. Search for textbooks covering this exact problem type
 2. Cross-reference with the known textbook database
 3. For each match, specify:
@@ -57,7 +66,11 @@ Use `tools/book_finder.py` → `find_books()`:
 
 ### STEP 5 — Verify the Answer
 
-Use `tools/wolfram_query.py`:
+**Run in terminal:**
+```bash
+python tools/wolfram_query.py "math expression to verify"
+```
+
 1. Formulate the problem as a Wolfram Alpha query
 2. Compare Wolfram's answer with our solution
 3. If they differ, investigate and reconcile
@@ -68,6 +81,7 @@ Use `tools/wolfram_query.py`:
 Use the `/latex-output` skill + `tools/latex_renderer.py`:
 1. Compile everything into a clean, structured output
 2. Format in LaTeX using the solution template
+3. Save the generated `.tex` file to `.tmp/solution.tex`
 3. Include the academic integrity reminder
 
 ## Output Template

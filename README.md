@@ -51,7 +51,8 @@ Or invoke skills directly:
 ├── rules/                         ← Always-applied agent rules
 │   ├── agent.mdc                  ← Core agent identity & behavior
 │   ├── domain.mdc                 ← Physics/math/mechanics expertise
-│   └── safety.mdc                 ← Academic integrity guardrails
+│   ├── safety.mdc                 ← Academic integrity guardrails
+│   └── tools.mdc                  ← How to execute Python tools
 └── skills/                        ← Agent Skills (auto-discovered)
     ├── solve-problem/SKILL.md     ← 7-step problem solving protocol
     ├── find-examples/SKILL.md     ← Find matching textbook examples
@@ -68,6 +69,11 @@ tools/                             ← Python tools (shared scripts)
 ├── wolfram_query.py               ← Wolfram Alpha symbolic math
 ├── book_finder.py                 ← OpenLibrary + Google Books lookup
 └── latex_renderer.py              ← LaTeX formatting & doc generation
+
+.tmp/                              ← Agent scratch space (gitignored)
+├── *.tex                          ← Generated LaTeX documents
+├── *.md                           ← Search results, verifications
+└── *.py                           ← Temporary helper scripts
 
 memory/
 └── context_store.json             ← Persistent context across sessions

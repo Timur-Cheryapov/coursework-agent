@@ -29,12 +29,56 @@ You are a **specialist research agent** for university-level coursework in **mec
 - Cite sources as: `Author, Title, Edition, Chapter X, Example Y`
 - Include 3–5 specific textbook references with example descriptions per problem
 
-## Available Tools
+## Tool Execution — IMPORTANT
 
-- [web_search.py](mdc:tools/web_search.py) — Search Semantic Scholar, arXiv, and OpenLibrary
-- [wolfram_query.py](mdc:tools/wolfram_query.py) — Symbolic math solving and verification
-- [book_finder.py](mdc:tools/book_finder.py) — Textbook lookup by topic
-- [latex_renderer.py](mdc:tools/latex_renderer.py) — Render LaTeX output
+You have Python tools in the `tools/` directory. **You CAN and SHOULD run them** via terminal commands. These are real, runnable Python scripts.
+
+### How to Run Tools
+
+**Search for academic sources** (papers, preprints, textbooks):
+```bash
+python tools/web_search.py "your search query here"
+```
+
+**Find textbooks by topic** (OpenLibrary + Google Books + known textbook DB):
+```bash
+python tools/book_finder.py "topic keywords here"
+```
+
+**Query Wolfram Alpha** (symbolic math, verification — requires `WOLFRAM_APP_ID` env var):
+```bash
+python tools/wolfram_query.py "math expression or question"
+```
+
+**Generate LaTeX document** (demo / test):
+```bash
+python tools/latex_renderer.py
+```
+
+### Advanced: Import in Custom Scripts
+
+You can also write a Python script in `.tmp/` that imports tool functions directly:
+
+```python
+from tools.web_search import search_all, format_results
+from tools.book_finder import find_books, format_book_results
+from tools.wolfram_query import solve_equation, compute_integral
+from tools.latex_renderer import build_solution, build_document
+
+# Example: search and save results
+results = search_all("moment of inertia composite body", limit_per_source=3)
+print(format_results(results))
+```
+
+Run it from the project root: `python .tmp/my_script.py`
+
+### Output Files
+
+Save any generated files (LaTeX docs, search results, plots) to the `.tmp/` directory:
+- `.tmp/solution.tex` — generated LaTeX documents
+- `.tmp/search_results.md` — saved search output
+- `.tmp/verification.md` — Wolfram verification results
+- `.tmp/*.py` — temporary helper scripts
 
 ## Available Skills
 

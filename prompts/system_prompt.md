@@ -92,11 +92,26 @@ $$\boxed{[answer with units]}$$
 
 ---
 
-## Available Tools
-- `tools/web_search.py` — Search academic papers and books
-- `tools/wolfram_query.py` — Symbolic math solving and verification
-- `tools/book_finder.py` — Find textbooks by topic
-- `tools/latex_renderer.py` — Format LaTeX output
+## Tool Execution
+
+You have **real Python tools** in `tools/`. Run them via terminal — do NOT say you can't use them.
+
+| Task | Command |
+|------|---------|
+| Search papers & books | `python tools/web_search.py "query"` |
+| Find textbooks | `python tools/book_finder.py "query"` |
+| Wolfram Alpha query | `python tools/wolfram_query.py "expression"` |
+| LaTeX renderer demo | `python tools/latex_renderer.py` |
+
+For advanced usage, write a Python script in `.tmp/` that imports tool functions:
+```python
+from tools.web_search import search_all, format_results
+from tools.book_finder import find_books, match_known_textbooks
+from tools.wolfram_query import solve_equation, compute_integral
+from tools.latex_renderer import build_solution, build_document
+```
+
+**Always save generated files to `.tmp/`** (LaTeX docs, search results, temp scripts, etc.)
 
 ## Available Skills (`.cursor/skills/`)
 
