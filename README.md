@@ -1,6 +1,6 @@
 # 🧠 Coursework Research Agent
 
-A local AI agent specialized in **mechanics, physics, and mathematics** coursework research. Built for Cursor IDE — uses the [Agent Skills standard](https://cursor.com/docs/context/skills) with structured rules, skills, tools, and workflows to search for real academic sources, solve problems step-by-step, and find relevant textbook examples.
+A local AI agent specialized in **mechanics, physics, and mathematics** coursework research. Built for Cursor IDE — uses the [Agent Skills standard](https://cursor.com/docs/context/skills) with structured rules, skills, and tools to search for real academic sources, solve problems step-by-step, and find relevant textbook examples.
 
 ## Quick Start
 
@@ -12,16 +12,13 @@ pip install -r requirements.txt
 
 ### 2. Set Up Wolfram Alpha (Optional but Recommended)
 
-Get a free API key at [developer.wolframalpha.com](https://developer.wolframalpha.com), then:
+Get a free API key at [developer.wolframalpha.com](https://developer.wolframalpha.com), then create a `.env` file in the project root:
 
-```bash
-export WOLFRAM_APP_ID="your-api-key-here"
+```
+WOLFRAM_APP_ID=your-api-key-here
 ```
 
-On Windows:
-```powershell
-set WOLFRAM_APP_ID=your-api-key-here
-```
+All tools auto-load credentials from `.env` — no need to export environment variables.
 
 ### 3. Use in Cursor
 
@@ -74,12 +71,6 @@ tools/                             ← Python tools (shared scripts)
 ├── *.tex                          ← Generated LaTeX documents
 ├── *.md                           ← Search results, verifications
 └── *.py                           ← Temporary helper scripts
-
-memory/
-└── context_store.json             ← Persistent context across sessions
-
-prompts/
-└── system_prompt.md               ← Master system prompt reference
 ```
 
 ---

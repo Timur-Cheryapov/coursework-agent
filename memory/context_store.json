@@ -1,9 +1,0 @@
-{
-  "version": "1.0",
-  "description": "Persistent context store for the coursework research agent. Tracks topics, problems solved, and user preferences across sessions.",
-  "sessions": [],
-  "topics_explored": [],
-  "problems_solved": [],
-  "preferred_textbooks": [],
-  "notes": []
-}
